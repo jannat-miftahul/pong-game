@@ -46,14 +46,12 @@ function drawScore() {
         canvas.width / 2,
         canvas.height - 30
     );
+}
 
-    // Leaderboard stats (top right corner)
-    ctx.font = "14px Arial";
-    ctx.textAlign = "right";
-    ctx.fillStyle = "#aaa";
-    ctx.fillText(`Games: ${gamesPlayed}`, canvas.width - 10, 20);
-    ctx.fillText(`Player Wins: ${playerWins}`, canvas.width - 10, 40);
-    ctx.fillText(`Computer Wins: ${aiWins}`, canvas.width - 10, 60);
+function updateExternalStats() {
+    document.getElementById('games-played').textContent = `Games: ${gamesPlayed}`;
+    document.getElementById('player-wins').textContent = `Player Wins: ${playerWins}`;
+    document.getElementById('computer-wins').textContent = `Computer Wins: ${aiWins}`;
 }
 
 function drawLeaderboard() {

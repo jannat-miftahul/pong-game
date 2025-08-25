@@ -97,17 +97,13 @@ const ballRadius = 10; // Ball size
 
 ### Colors
 
-Modify colors in `styles.css` and drawing functions:
+Modify colors in `styles.css`:
 
--   Background: `#222` (dark gray)
--   Canvas: `#111` (darker gray)
--   Paddles: `#fff` (white)
--   Ball: `#0ff` (cyan)
--   UI text: Various shades for hierarchy
+-   Background: `#222`, Canvas: `#111`, Paddles: `#fff`, Ball: `#0ff`
 
 ### Canvas Size
 
-Adjust canvas dimensions in `index.html`:
+Adjust dimensions in `index.html`:
 
 ```html
 <canvas id="pong" width="800" height="500"></canvas>
@@ -115,17 +111,11 @@ Adjust canvas dimensions in `index.html`:
 
 ## 🔧 Development
 
-### Adding New Features
-
-1. **State management** - Add variables/constants to `state.js`
-2. **Rendering** - Add drawing functions to `draw.js`
-3. **Logic** - Add game mechanics to `game.js`
-
 ### Code Organization
 
--   Keep all variables in `state.js` to avoid conflicts
--   Separate rendering logic in `draw.js` for maintainability
--   Main game loop and input handling in `game.js`
+-   **state.js** - Variables and constants
+-   **draw.js** - Rendering functions
+-   **game.js** - Game logic and input handling
 
 ## 📊 Game Features
 
@@ -143,20 +133,12 @@ Adjust canvas dimensions in `index.html`:
 
 ## 📈 Leaderboard System
 
-### Statistics Tracked
-
--   **Games Played** - Total number of completed games
--   **Win/Loss Record** - Separate counters for player and AI wins
--   **Win Percentages** - Calculated win rates for performance analysis
--   **Total Points** - Cumulative points scored across all games
--   **Average Performance** - Points per game for both player and AI
-
-### Leaderboard Features
-
--   **Persistent Tracking** - Statistics survive across multiple games
--   **Visual Display** - Comprehensive leaderboard overlay
+-   **Games Played** - Total completed games
+-   **Win/Loss Record** - Player and AI win counters
+-   **Win Percentages** - Calculated win rates
+-   **Total Points** - Cumulative points across all games
+-   **Persistent Tracking** - Statistics survive multiple games
 -   **Reset Functionality** - Clear all statistics with confirmation
--   **Real-time Updates** - Live statistics during gameplay
 
 ## 🤝 Contributing
 
@@ -174,6 +156,6 @@ Contributions are welcome! Here are some ideas:
 
 ---
 
-**Enjoy playing Pong! 🏓**
+**Enjoy playing Pong!**
 
 _Built with ❤️ using vanilla JavaScript, HTML5 Canvas, and CSS_

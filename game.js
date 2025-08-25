@@ -100,6 +100,7 @@ function draw() {
 function gameLoop() {
     update();
     draw();
+    updateExternalStats(); // Update external stats panel
     requestAnimationFrame(gameLoop);
 }
 
@@ -113,6 +114,38 @@ canvas.addEventListener("mousemove", function (evt) {
     if (playerY < 0) playerY = 0;
     if (playerY + paddleHeight > canvas.height)
         playerY = canvas.height - paddleHeight;
+});
+
+// Touch controls for mobile
+canvas.addEventListener("touchmove", function (evt) {
+    if (gameOver) return;
+    evt.preventDefault(); // Prevent scrolling
+
+    let rect = canvas.getBoundingClientRect();
+    let touch = evt.touches[0];
+    let touchY = touch.clientY - rect.top;
+    playerY = touchY - paddleHeight / 2;
+    if (playerY < 0) playerY = 0;
+    if (playerY + paddleHeight > canvas.height)
+        playerY = canvas.height - paddleHeight;
+});
+
+// Touch start for mobile
+canvas.addEventListener("touchstart", function (evt) {
+    evt.preventDefault(); // Prevent default touch behavior
+});
+
+// Double tap to restart on mobile
+let lastTouchTime = 0;
+canvas.addEventListener("touchend", function (evt) {
+    if (gameOver) {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTouchTime;
+        if (tapLength < 500 && tapLength > 0) {
+            resetGame();
+        }
+        lastTouchTime = currentTime;
+    }
 });
 
 // Keyboard controls for restart

@@ -3,17 +3,36 @@
 const canvas = document.getElementById("pong");
 const ctx = canvas.getContext("2d");
 
-// Game objects
-const paddleWidth = 15;
-const paddleHeight = 100;
-const ballRadius = 10;
-const playerX = 20;
-const aiX = canvas.width - paddleWidth - 20;
+// Set up responsive canvas
+function setupCanvas() {
+    const container = canvas.parentElement;
+    const maxWidth = Math.min(800, window.innerWidth - 40);
+    const aspectRatio = 800 / 500; // Original game aspect ratio
 
-// Speed settings - adjust these for different difficulty levels
-const BALL_BASE_SPEED_X = 8; // Base horizontal speed
-const BALL_BASE_SPEED_Y = 6; // Base vertical speed
-const AI_PADDLE_SPEED = 7; // AI paddle movement speed
+    canvas.width = maxWidth;
+    canvas.height = maxWidth / aspectRatio;
+
+    // On very small screens, use a minimum height
+    if (canvas.height < 300) {
+        canvas.height = 300;
+        canvas.width = canvas.height * aspectRatio;
+    }
+}
+
+// Initialize canvas
+setupCanvas();
+
+// Game objects (proportional to canvas size)
+const paddleWidth = canvas.width * 0.01875; // 15/800 of original
+const paddleHeight = canvas.height * 0.2; // 100/500 of original
+const ballRadius = Math.min(canvas.width, canvas.height) * 0.02; // 10/500 of original
+const playerX = canvas.width * 0.025; // 20/800 of original
+const aiX = canvas.width - paddleWidth - canvas.width * 0.025;
+
+// Speed settings - proportional to canvas size
+const BALL_BASE_SPEED_X = canvas.width * 0.01; // 8/800 of original
+const BALL_BASE_SPEED_Y = canvas.height * 0.012; // 6/500 of original
+const AI_PADDLE_SPEED = canvas.height * 0.014; // 7/500 of original
 const SPEED_INCREASE = 0.1; // Speed increase per point scored
 
 let playerY = (canvas.height - paddleHeight) / 2;
@@ -76,3 +95,13 @@ function resetLeaderboard() {
     totalPlayerPoints = 0;
     totalAiPoints = 0;
 }
+
+// Handle window resize
+window.addEventListener("resize", () => {
+    setupCanvas();
+    // Adjust ball and paddle positions to new canvas size
+    ballX = canvas.width / 2;
+    ballY = canvas.height / 2;
+    playerY = (canvas.height - paddleHeight) / 2;
+    aiY = (canvas.height - paddleHeight) / 2;
+});
