@@ -9,10 +9,7 @@ A classic Pong game built with HTML5 Canvas, CSS, and JavaScript. Features mouse
 -   [How to Play](#-how-to-play)
 -   [Project Structure](#-project-structure)
 -   [Configuration](#️-configuration)
--   [Customization](#-customization)
--   [Development](#-development)
 -   [Game Features](#-game-features)
--   [Game Mechanics](#-game-mechanics)
 -   [Leaderboard System](#-leaderboard-system)
 
 ## 🎮 Features
@@ -93,43 +90,12 @@ const paddleHeight = 100; // Paddle size
 const ballRadius = 10; // Ball size
 ```
 
-## 🎨 Customization
-
-### Colors
-
-Modify colors in `styles.css`:
-
--   Background: `#222`, Canvas: `#111`, Paddles: `#fff`, Ball: `#0ff`
-
-### Canvas Size
-
-Adjust dimensions in `index.html`:
-
-```html
-<canvas id="pong" width="800" height="500"></canvas>
-```
-
-## 🔧 Development
-
-### Code Organization
-
--   **state.js** - Variables and constants
--   **draw.js** - Rendering functions
--   **game.js** - Game logic and input handling
-
 ## 📊 Game Features
 
 -   **Collision Detection** - Ball bounces off paddles and walls
 -   **Physics System** - Smooth ball movement with progressive speed
 -   **AI Opponent** - Computer-controlled paddle with balanced difficulty
 -   **Scoring System** - Real-time scoring with win condition (10 points)
-
-## 🎲 Game Mechanics
-
--   **Mouse Control** - Move paddle with mouse
--   **Ball Physics** - Velocity-based movement with spin effects
--   **Progressive Difficulty** - Speed increases with each point
--   **Game Reset** - Clean restart functionality
 
 ## 📈 Leaderboard System
 

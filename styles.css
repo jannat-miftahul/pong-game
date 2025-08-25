@@ -86,12 +86,10 @@ h1 {
     .game-container {
         gap: 20px;
     }
-    
     .stats-panel {
         min-width: 180px;
         padding: 15px;
     }
-    
     h1 {
         font-size: clamp(1.3rem, 4vw, 2.5rem);
     }
@@ -103,19 +101,16 @@ h1 {
         align-items: center;
         gap: 15px;
     }
-    
     .stats-panel {
         order: 2;
         min-width: 100%;
         max-width: 400px;
     }
-    
     #pong {
         order: 1;
         width: 100%;
         max-width: 400px;
     }
-    
     h1 {
         margin-top: 10px;
         margin-bottom: 15px;
@@ -126,21 +121,17 @@ h1 {
     body {
         padding: 5px;
     }
-    
     .game-container {
         gap: 10px;
     }
-    
     .stats-panel {
         padding: 10px;
         font-size: 0.8rem;
     }
-    
     .stats-panel h3 {
         font-size: 1rem;
         margin-bottom: 10px;
     }
-    
     .stats-panel div {
         font-size: 0.8rem;
         margin: 5px 0;
