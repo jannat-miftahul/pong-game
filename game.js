@@ -11,16 +11,17 @@ function update() {
     if (ballY - ballRadius < 0) {
         ballY = ballRadius;
         ballSpeedY = -ballSpeedY;
-    }
-    else if (ballY + ballRadius > canvas.height) {
+    } else if (ballY + ballRadius > canvas.height) {
         ballY = canvas.height - ballRadius;
         ballSpeedY = -ballSpeedY;
     }
 
     // Paddle collision (left)
-    if (ballX - ballRadius < playerX + paddleWidth &&
+    if (
+        ballX - ballRadius < playerX + paddleWidth &&
         ballY + ballRadius > playerY &&
-        ballY - ballRadius < playerY + paddleHeight) {
+        ballY - ballRadius < playerY + paddleHeight
+    ) {
         ballX = playerX + paddleWidth + ballRadius;
         ballSpeedX = -ballSpeedX;
         // Add a bit of "spin"
@@ -29,9 +30,11 @@ function update() {
     }
 
     // Paddle collision (right)
-    if (ballX + ballRadius > aiX &&
+    if (
+        ballX + ballRadius > aiX &&
         ballY + ballRadius > aiY &&
-        ballY - ballRadius < aiY + paddleHeight) {
+        ballY - ballRadius < aiY + paddleHeight
+    ) {
         ballX = aiX - ballRadius;
         ballSpeedX = -ballSpeedX;
         // Add a bit of "spin"
@@ -48,8 +51,7 @@ function update() {
             winner = "AI";
         }
         resetBall();
-    }
-    else if (ballX + ballRadius > canvas.width) {
+    } else if (ballX + ballRadius > canvas.width) {
         playerScore++;
         ballSpeedMultiplier += SPEED_INCREASE; // Increase speed after each point
         if (playerScore >= winningScore) {
@@ -109,7 +111,8 @@ canvas.addEventListener("mousemove", function (evt) {
     let mouseY = evt.clientY - rect.top;
     playerY = mouseY - paddleHeight / 2;
     if (playerY < 0) playerY = 0;
-    if (playerY + paddleHeight > canvas.height) playerY = canvas.height - paddleHeight;
+    if (playerY + paddleHeight > canvas.height)
+        playerY = canvas.height - paddleHeight;
 });
 
 // Keyboard controls for restart
