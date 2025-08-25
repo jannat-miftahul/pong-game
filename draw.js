@@ -31,13 +31,13 @@ function drawScore() {
     // Player score (left side)
     ctx.fillText(playerScore, canvas.width / 4, 60);
 
-    // AI score (right side)
+    // Computer score (right side)
     ctx.fillText(aiScore, (canvas.width * 3) / 4, 60);
 
     // Score labels
     ctx.font = "16px Arial";
     ctx.fillText("PLAYER", canvas.width / 4, 85);
-    ctx.fillText("AI", (canvas.width * 3) / 4, 85);
+    ctx.fillText("COMPUTER", (canvas.width * 3) / 4, 85);
 
     // Game status
     ctx.font = "20px Arial";
@@ -53,7 +53,7 @@ function drawScore() {
     ctx.fillStyle = "#aaa";
     ctx.fillText(`Games: ${gamesPlayed}`, canvas.width - 10, 20);
     ctx.fillText(`Player Wins: ${playerWins}`, canvas.width - 10, 40);
-    ctx.fillText(`AI Wins: ${aiWins}`, canvas.width - 10, 60);
+    ctx.fillText(`Computer Wins: ${aiWins}`, canvas.width - 10, 60);
 }
 
 function drawLeaderboard() {
@@ -89,7 +89,7 @@ function drawLeaderboard() {
 
     y += 25;
     ctx.fillText(
-        `AI Wins: ${aiWins} (${
+        `Computer Wins: ${aiWins} (${
             gamesPlayed ? Math.round((aiWins / gamesPlayed) * 100) : 0
         }%)`,
         canvas.width / 2,
@@ -104,7 +104,11 @@ function drawLeaderboard() {
     );
 
     y += 25;
-    ctx.fillText(`Total AI Points: ${totalAiPoints}`, canvas.width / 2, y);
+    ctx.fillText(
+        `Total Computer Points: ${totalAiPoints}`,
+        canvas.width / 2,
+        y
+    );
 
     if (gamesPlayed > 0) {
         y += 30;
@@ -112,9 +116,9 @@ function drawLeaderboard() {
         y += 20;
         ctx.font = "16px Arial";
         ctx.fillText(
-            `Player: ${(totalPlayerPoints / gamesPlayed).toFixed(1)} | AI: ${(
-                totalAiPoints / gamesPlayed
-            ).toFixed(1)}`,
+            `Player: ${(totalPlayerPoints / gamesPlayed).toFixed(
+                1
+            )} | Computer: ${(totalAiPoints / gamesPlayed).toFixed(1)}`,
             canvas.width / 2,
             y
         );
@@ -163,7 +167,7 @@ function drawGameOver() {
     ctx.fillStyle = "#fff";
     ctx.font = "20px Arial";
     ctx.fillText(
-        `Overall Record: Player ${playerWins} - ${aiWins} AI`,
+        `Overall Record: Player ${playerWins} - ${aiWins} Computer`,
         canvas.width / 2,
         canvas.height / 2 + 20
     );

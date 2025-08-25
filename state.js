@@ -56,7 +56,7 @@ function resetGame() {
 
         if (winner === "PLAYER") {
             playerWins++;
-        } else if (winner === "AI") {
+        } else if (winner === "COMPUTER") {
             aiWins++;
         }
     }

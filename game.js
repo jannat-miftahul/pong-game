@@ -48,7 +48,7 @@ function update() {
         ballSpeedMultiplier += SPEED_INCREASE; // Increase speed after each point
         if (aiScore >= winningScore) {
             gameOver = true;
-            winner = "AI";
+            winner = "COMPUTER";
         }
         resetBall();
     } else if (ballX + ballRadius > canvas.width) {
