@@ -140,20 +140,6 @@ Adjust dimensions in `index.html`:
 -   **Persistent Tracking** - Statistics survive multiple games
 -   **Reset Functionality** - Clear all statistics with confirmation
 
-## 🤝 Contributing
-
-Contributions are welcome! Here are some ideas:
-
-### Potential Enhancements
-
--   **Power-ups** - Add special effects or temporary abilities
--   **Multiple AI Levels** - Different difficulty settings
--   **Sound Effects** - Audio feedback for collisions and scoring
--   **Particle Effects** - Visual enhancements for collisions
--   **Mobile Support** - Touch controls for mobile devices
--   **Tournament Mode** - Best of X games
--   **Custom Themes** - Different visual styles
-
 ---
 
 **Enjoy playing Pong!**
